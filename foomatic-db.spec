@@ -6,9 +6,9 @@ Version:	20030511
 Release:	1
 License:	GPL
 Group:		Applications/System
-URL:		http://www.linuxprinting.org/foomatic.html
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-current.tar.gz
 # Source0-md5: cd30a07086ab815ad5b129cef13418fe
+URL:		http://www.linuxprinting.org/foomatic.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 Requires:	foomatic-db-engine
@@ -29,15 +29,14 @@ plików PPD.
 %build
 %{__aclocal}
 %{__autoconf}
-
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
