@@ -2,7 +2,7 @@
 Summary:	Foomatic database
 Summary(pl):	Baza danych dla foomatic
 Name:		foomatic-db
-Version:	20021210
+Version:	20021222
 Release:	1
 License:	GPL
 Group:		Applications/System
