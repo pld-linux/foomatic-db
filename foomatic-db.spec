@@ -2,12 +2,14 @@
 Summary:	Foomatic database
 Summary(pl):	Baza danych dla foomatic
 Name:		foomatic-db
-Version:	20050405
-Release:	1
+Version:	20051123
+Release:	0.1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
-# Source0-md5:	e47c5b845160907217cb82f4e4bff34b
+# foomatic db engine version
+%define		_fev	3.0
+Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{_fev}-%{version}.tar.gz
+# Source0-md5:	b882ce098801d382c7d66226964c784c
 URL:		http://www.linuxprinting.org/foomatic.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -47,3 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/foomatic/db/source/driver/*
 %{_datadir}/foomatic/db/source/opt/*
 %{_datadir}/foomatic/db/source/printer/*
+#%{_datadir}/foomatic/db/source/PPD/*
