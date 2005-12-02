@@ -3,7 +3,7 @@ Summary:	Foomatic database
 Summary(pl):	Baza danych dla foomatic
 Name:		foomatic-db
 Version:	20051123
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications/System
 # foomatic db engine version
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# We don't need PPD files in this package
+rm $RPM_BUILD_ROOT/%{_datadir}/foomatic/db/source/PPD/ -frd
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -49,4 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/foomatic/db/source/driver/*
 %{_datadir}/foomatic/db/source/opt/*
 %{_datadir}/foomatic/db/source/printer/*
-#%{_datadir}/foomatic/db/source/PPD/*
