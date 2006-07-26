@@ -41,7 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # We don't need PPD files in this package
-rm $RPM_BUILD_ROOT/%{_datadir}/foomatic/db/source/PPD/ -frd
+rm $RPM_BUILD_ROOT%{_datadir}/foomatic/db/source/PPD/ -frd
 
 %clean
 rm -rf $RPM_BUILD_ROOT
