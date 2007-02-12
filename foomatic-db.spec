@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Foomatic database
-Summary(pl):	Baza danych dla foomatic
+Summary(pl.UTF-8):   Baza danych dla foomatic
 Name:		foomatic-db
 Version:	20060810
 Release:	1
@@ -20,10 +20,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The collected knowledge about printers, drivers, and driver options in
 XML files, used by foomatic-db-engine to generate PPD files.
 
-%description -l pl
-Ca≥o∂ciowa informacja o drukarkach, sterownikach i opcjach sterownikÛw
-w postaci plikÛw XML, uøywanych przez foomatic-db-engine do generowania
-plikÛw PPD.
+%description -l pl.UTF-8
+Ca≈Ço≈õciowa informacja o drukarkach, sterownikach i opcjach sterownik√≥w
+w postaci plik√≥w XML, u≈ºywanych przez foomatic-db-engine do generowania
+plik√≥w PPD.
 
 %prep
 %setup -q
