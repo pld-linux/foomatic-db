@@ -11,8 +11,6 @@ Group:		Applications/System
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{_fev}-%{version}.tar.gz
 # Source0-md5:	fd8968c7500462d9661a1925c99b9441
 URL:		http://www.linuxprinting.org/foomatic.html
-BuildRequires:	autoconf
-BuildRequires:	automake
 Requires:	foomatic-db-engine >= 3.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,8 +20,8 @@ XML files, used by foomatic-db-engine to generate PPD files.
 
 %description -l pl.UTF-8
 Całościowa informacja o drukarkach, sterownikach i opcjach sterowników
-w postaci plików XML, używanych przez foomatic-db-engine do generowania
-plików PPD.
+w postaci plików XML, używanych przez foomatic-db-engine do
+generowania plików PPD.
 
 %prep
 %setup -q
