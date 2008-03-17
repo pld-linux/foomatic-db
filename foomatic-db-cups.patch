@@ -1,0 +1,11 @@
+--- foomatic-db-20080317/configure.ac~	2008-03-17 08:21:50.000000000 +0100
++++ foomatic-db-20080317/configure.ac	2008-03-17 17:59:21.920368126 +0100
+@@ -15,7 +15,7 @@
+ BINSEARCHPATH=/usr/bin:/bin:/usr/local/bin
+ DATASEARCHPATH=/usr/share:/usr/local/share:/usr/lib:/usr/local/lib:/opt
+ BSB=$BINSEARCHPATH:$SBINSEARCHPATH
+-AC_PATH_DIRS(CUPS_PPDS,cups/model,CUPS_PPDS_NOT_FOUND,$DATASEARCHPATH)
++AC_PATH_DIRS(CUPS_PPDS,cups/model,/usr/share/cups/model,$DATASEARCHPATH)
+ AC_PATH_PROG(GZIP,gzip,GZIP_NOT_FOUND,$BSB)
+ 
+ dnl disable PPD file compression
