@@ -3,7 +3,7 @@ Summary:	Foomatic database
 Summary(pl.UTF-8):	Baza danych dla foomatic
 Name:		foomatic-db
 Version:	20080317
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/System
 # foomatic db engine version
@@ -27,8 +27,7 @@ generowania plików PPD.
 %setup -q
 
 %build
-%configure \
-	CUPS_PPDS=%{_datadir}/cups/model/
+%configure
 %{__make}
 
 %install
@@ -50,4 +49,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/foomatic/db/source/opt/*
 %{_datadir}/foomatic/db/source/printer/*
 %{_datadir}/foomatic/db/oldprinterids
-%{_datadir}/cups/model/foomatic-db-ppds
