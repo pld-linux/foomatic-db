@@ -3,14 +3,13 @@ Summary:	Foomatic database
 Summary(pl.UTF-8):	Baza danych dla foomatic
 Name:		foomatic-db
 Version:	20080317
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 # foomatic db engine version
 %define		_fev	3.0
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{_fev}-%{version}.tar.gz
 # Source0-md5:	ff65282a646a6242efd74219b11b0ff1
-Patch0:		%{name}-cups.patch
 URL:		http://www.linuxprinting.org/foomatic.html
 Requires:	foomatic-db-engine >= 3.0.20080317
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,10 +25,10 @@ generowania plików PPD.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%configure
+%configure \
+	CUPS_PPDS=%{_datadir}/cups/model/
 %{__make}
 
 %install
