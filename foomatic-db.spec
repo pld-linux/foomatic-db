@@ -2,16 +2,17 @@
 Summary:	Foomatic database
 Summary(pl.UTF-8):	Baza danych dla foomatic
 Name:		foomatic-db
-Version:	20081228
+Version:	20110615
 Release:	1
 License:	GPL
 Group:		Applications/System
 # foomatic db engine version
-%define		_fev	3.0
+%define		_fev	4.0
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{_fev}-%{version}.tar.gz
-# Source0-md5:	7215bf55c715708eae33979e132c5a90
+# Source0-md5:	f01fb27f96d3ec1e3b59dc860c64c52b
 URL:		http://www.linuxprinting.org/foomatic.html
-Requires:	foomatic-db-engine >= 3.0.20080317
+Requires:	foomatic-db-engine >= 4.0.20110615
+BuildRequires:	bash
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,7 +28,7 @@ generowania plików PPD.
 %setup -q
 
 %build
-%configure
+/bin/bash %configure
 %{__make}
 
 %install
@@ -37,14 +38,14 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # We don't need PPD files in this package
-rm $RPM_BUILD_ROOT%{_datadir}/foomatic/db/source/PPD/ -frd
+rm -fr $RPM_BUILD_ROOT%{_datadir}/foomatic/db/source/PPD/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog TODO README USAGE
+%doc ChangeLog README USAGE
 %{_datadir}/foomatic/db/source/driver/*
 %{_datadir}/foomatic/db/source/opt/*
 %{_datadir}/foomatic/db/source/printer/*
