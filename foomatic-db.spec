@@ -3,7 +3,7 @@ Summary:	Foomatic database
 Summary(pl.UTF-8):	Baza danych dla foomatic
 Name:		foomatic-db
 Version:	20190510
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 # foomatic db engine version
@@ -50,5 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/foomatic/db/source/opt/*.xml
 %{_datadir}/foomatic/db/source/printer/*.xml
 %{_datadir}/foomatic/db/oldprinterids
-%{_datadir}/xmlschema
+%{_datadir}/foomatic/xmlschema
 
