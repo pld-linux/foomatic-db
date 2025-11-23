@@ -13,6 +13,7 @@ URL:		https://wiki.linuxfoundation.org/openprinting/database/foomatic
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	foomatic-db-engine >= 4.0.20110615
+Obsoletes:	foomatic-db-hpijs < 2:20090902
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
