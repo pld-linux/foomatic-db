@@ -7,10 +7,9 @@ License:	GPL v2+
 Group:		Applications/System
 # foomatic db engine version
 %define		fdbeng_ver	4.0
-Source0:	https://www.linuxprinting.org/download/foomatic/%{name}-%{fdbeng_ver}-%{version}.tar.xz
+Source0:	https://www.openprinting.org/download/foomatic/%{name}-%{fdbeng_ver}-%{version}.tar.xz
 # Source0-md5:	d360b72a912190b00acede3052b84ca8
-URL:		https://www.linuxprinting.org/foomatic.html
-BuildRequires:	bash
+URL:		https://wiki.linuxfoundation.org/openprinting/database/foomatic
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	foomatic-db-engine >= 4.0.20110615
