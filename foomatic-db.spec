@@ -1,16 +1,18 @@
 Summary:	Foomatic database
 Summary(pl.UTF-8):	Baza danych dla foomatic
 Name:		foomatic-db
-Version:	20190510
-Release:	2
+Version:	20251122
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 # foomatic db engine version
 %define		fdbeng_ver	4.0
-Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{fdbeng_ver}-%{version}.tar.xz
-# Source0-md5:	2cea82399afc0b87a63888efa11ddeb2
-URL:		http://www.linuxprinting.org/foomatic.html
+Source0:	https://www.linuxprinting.org/download/foomatic/%{name}-%{fdbeng_ver}-%{version}.tar.xz
+# Source0-md5:	d360b72a912190b00acede3052b84ca8
+URL:		https://www.linuxprinting.org/foomatic.html
 BuildRequires:	bash
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	foomatic-db-engine >= 4.0.20110615
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,8 +29,7 @@ generowania plików PPD.
 %setup -q
 
 %build
-/bin/bash %configure
-%{__make}
+%configure
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -50,4 +51,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/foomatic/db/source/printer/*.xml
 %{_datadir}/foomatic/db/oldprinterids
 %{_datadir}/foomatic/xmlschema
-
